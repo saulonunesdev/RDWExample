@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+	$.ajax({
+		url: 'http://localhost:8080/objDelete',
+		data: 'set={"TestInt":3,"TestString":"Delete Test","TestBool":true}',
+		dataType: 'json',
+		contentType: "application/x-www-form-urlencoded",
+		type: 'DELETE',
+		success: function(result) {
+			console.log("DELETE RESULT: ", result);
+		}
+	})
+  });
+});
+
+</script>
+</head>
+<body>
+
+<button>DELETE Test</button>
+
+</body>
+</html>

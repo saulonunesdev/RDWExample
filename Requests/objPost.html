@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+	$.ajax({
+		url: 'http://localhost:8080/objPost',
+		data: 'set={"TestInt":1,"TestString":"Post Test","TestBool":true}',
+		dataType: 'json',
+		contentType: "application/x-www-form-urlencoded",
+		type: 'POST',
+		success: function(result) {
+			console.log("POST RESULT: ", result);
+		}
+	})
+  });
+});
+
+</script>
+</head>
+<body>
+
+<button>POST Test</button>
+
+</body>
+</html>
